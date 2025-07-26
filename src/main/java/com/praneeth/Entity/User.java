@@ -1,5 +1,6 @@
 package com.praneeth.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.praneeth.Enum.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -25,9 +26,11 @@ public class User {
     private UserRole role;
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @JsonBackReference("client-project")
     private List<Project> clientProjects;
 
     @OneToMany(mappedBy = "builder", cascade = CascadeType.ALL)
+    @JsonBackReference("builder-project")
     private List<Project> builderProjects;
 
     public User() {}

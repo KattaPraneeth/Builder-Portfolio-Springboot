@@ -1,5 +1,6 @@
 package com.praneeth.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.praneeth.Enum.ProjectStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -21,10 +22,12 @@ public class Project {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
+    @JsonManagedReference("client-project")
     private User client;
 
     @ManyToOne
     @JoinColumn(name = "builder_id")
+    @JsonManagedReference("builder-project")
     private User builder;
 
     public Project() {}
