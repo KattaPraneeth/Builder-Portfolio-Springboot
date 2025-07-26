@@ -1,0 +1,38 @@
+2025-07-27T02:38:39.292+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] .p.BuilderPortfolioSpringbootApplication : Starting BuilderPortfolioSpringbootApplication using Java 17.0.14 with PID 38786 (/Users/kpraneeth/Desktop/Mini-Project-2/Builder-Portfolio-Springboot/target/classes started by kpraneeth in /Users/kpraneeth/Desktop/Mini-Project-2/Builder-Portfolio-Springboot)
+2025-07-27T02:38:39.293+05:30 DEBUG 38786 --- [Builder-Portfolio-Springboot] [restartedMain] .p.BuilderPortfolioSpringbootApplication : Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-27T02:38:39.294+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] .p.BuilderPortfolioSpringbootApplication : No active profile set, falling back to 1 default profile: "default"
+2025-07-27T02:38:39.309+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-27T02:38:39.309+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-27T02:38:39.527+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-27T02:38:39.549+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+2025-07-27T02:38:39.715+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-27T02:38:39.719+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-27T02:38:39.719+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-27T02:38:39.733+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-27T02:38:39.733+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 423 ms
+2025-07-27T02:38:39.786+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-27T02:38:39.849+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2d016f25
+2025-07-27T02:38:39.850+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-27T02:38:39.862+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-27T02:38:39.875+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-07-27T02:38:39.887+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-27T02:38:39.963+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-27T02:38:39.993+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-27T02:38:40.267+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-27T02:38:40.268+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T02:38:40.342+05:30  WARN 38786 --- [Builder-Portfolio-Springboot] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-27T02:38:40.465+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-27T02:38:40.475+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-27T02:38:40.480+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [restartedMain] .p.BuilderPortfolioSpringbootApplication : Started BuilderPortfolioSpringbootApplication in 1.352 seconds (process running for 1.512)
+2025-07-27T02:41:12.646+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-27T02:41:12.650+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-27T02:41:12.652+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T02:41:12.653+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-27T02:41:12.655+05:30  INFO 38786 --- [Builder-Portfolio-Springboot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
