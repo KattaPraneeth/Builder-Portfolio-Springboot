@@ -12,17 +12,20 @@ import com.praneeth.Service.Interfaces.ProjectService;
 import com.praneeth.Service.Interfaces.UserService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import org.slf4j.Logger;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class ProjectServiceImpl implements ProjectService {
 
-    private final ProjectRepository projectRepo;
-    private final UserService userService;
+    @Autowired
+    private ProjectRepository projectRepo;
+    @Autowired
+    private UserService userService;
     private final Logger log = LoggerFactory.getLogger(ProjectServiceImpl.class);
 
     @Override
