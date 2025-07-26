@@ -27,6 +27,8 @@ public class Project {
     @JoinColumn(name = "builder_id")
     private User builder;
 
+    public Project() {}
+
     public Project(Long id, String title, String description, ProjectStatus status, User client, User builder) {
         this.id = id;
         this.title = title;
