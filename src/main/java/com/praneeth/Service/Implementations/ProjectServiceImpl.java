@@ -10,7 +10,6 @@ import com.praneeth.Exceptions.ResourceNotFoundException;
 import com.praneeth.Repository.ProjectRepository;
 import com.praneeth.Service.Interfaces.ProjectService;
 import com.praneeth.Service.Interfaces.UserService;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
