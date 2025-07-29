@@ -1,9 +1,6 @@
 package com.praneeth.ExceptionHandler;
 
-import com.praneeth.Exceptions.BuilderNotFoundException;
-import com.praneeth.Exceptions.ClientNotFoundException;
-import com.praneeth.Exceptions.ProjectNotFoundException;
-import com.praneeth.Exceptions.ResourceNotFoundException;
+import com.praneeth.Exceptions.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -37,6 +34,16 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleValidationErrors(MethodArgumentNotValidException ex) {
         String error = ex.getBindingResult().getFieldError().getDefaultMessage();
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(InvalidProjectDataException.class)
+    public ResponseEntity<String> handleInvalidProjectData(InvalidProjectDataException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(InvalidUserDataException.class)
+    public ResponseEntity<String> handleInvalidUserData(InvalidUserDataException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)

@@ -18,8 +18,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import org.slf4j.Logger;
 
+import static com.praneeth.DTO.ProjectDTO.validate;
+
 @Service
-//@RequiredArgsConstructor
 public class ProjectServiceImpl implements ProjectService {
 
     @Autowired
@@ -30,6 +31,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Project addProject(ProjectDTO dto) {
+        validate(dto);
         User client = null;
         User builder = null;
 
@@ -75,6 +77,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Project updateProject(Long id, ProjectDTO dto) {
+        ProjectDTO.validate(dto);
         Project project = getProjectById(id);
 
         project.setTitle(dto.getTitle());

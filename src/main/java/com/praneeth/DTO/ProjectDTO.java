@@ -1,6 +1,7 @@
 package com.praneeth.DTO;
 
 import com.praneeth.Enum.ProjectStatus;
+import com.praneeth.Exceptions.InvalidProjectDataException;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -67,5 +68,27 @@ public class ProjectDTO {
 
     public void setBuilderId(Long builderId) {
         this.builderId = builderId;
+    }
+
+    public static void validate(ProjectDTO dto) {
+        if (dto == null) {
+            throw new InvalidProjectDataException("Project data cannot be null");
+        }
+
+        if (dto.getTitle() == null || dto.getTitle().trim().isEmpty()) {
+            throw new InvalidProjectDataException("Title is missing or blank");
+        }
+
+        if (dto.getStatus() == null) {
+            throw new InvalidProjectDataException("Project status is missing");
+        }
+
+        if (dto.getClientId() == null) {
+            throw new InvalidProjectDataException("Client ID is missing");
+        }
+
+        if (dto.getBuilderId() == null) {
+            throw new InvalidProjectDataException("Builder ID is missing");
+        }
     }
 }
