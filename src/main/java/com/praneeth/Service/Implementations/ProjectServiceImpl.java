@@ -3,6 +3,7 @@ package com.praneeth.Service.Implementations;
 import com.praneeth.DTO.ProjectDTO;
 import com.praneeth.Entity.Project;
 import com.praneeth.Entity.User;
+import com.praneeth.Enum.UserRole;
 import com.praneeth.Exceptions.BuilderNotFoundException;
 import com.praneeth.Exceptions.ClientNotFoundException;
 import com.praneeth.Exceptions.ProjectNotFoundException;
@@ -34,12 +35,18 @@ public class ProjectServiceImpl implements ProjectService {
 
         try {
             client = userService.getUserById(dto.getClientId());
+            if (!(client.getRole() == UserRole.CLIENT)) {
+                throw new ClientNotFoundException("User with ID " + dto.getClientId() + " is not a client.");
+            }
         } catch (ResourceNotFoundException e) {
             throw new ClientNotFoundException("Client not found with ID: " + dto.getClientId());
         }
 
         try {
             builder = userService.getUserById(dto.getBuilderId());
+            if (!(builder.getRole() == UserRole.BUILDER)) {
+                throw new BuilderNotFoundException("User with ID " + dto.getBuilderId() + " is not a builder.");
+            }
         } catch (ResourceNotFoundException e) {
             throw new BuilderNotFoundException("Builder not found with ID: " + dto.getBuilderId());
         }
@@ -75,13 +82,21 @@ public class ProjectServiceImpl implements ProjectService {
         project.setStatus(dto.getStatus());
 
         try {
-            project.setClient(userService.getUserById(dto.getClientId()));
+            User client = userService.getUserById(dto.getClientId());
+            if (!(client.getRole() == UserRole.CLIENT)) {
+                throw new ClientNotFoundException("User with ID " + dto.getClientId() + " is not a client.");
+            }
+            project.setClient(client);
         } catch (ResourceNotFoundException e) {
             throw new ClientNotFoundException("Client not found with ID: " + dto.getClientId());
         }
 
         try {
-            project.setBuilder(userService.getUserById(dto.getBuilderId()));
+            User builder = userService.getUserById(dto.getBuilderId());
+            if (!(builder.getRole() == UserRole.BUILDER)) {
+                throw new BuilderNotFoundException("User with ID " + dto.getBuilderId() + " is not a builder.");
+            }
+            project.setBuilder(builder);
         } catch (ResourceNotFoundException e) {
             throw new BuilderNotFoundException("Builder not found with ID: " + dto.getBuilderId());
         }
