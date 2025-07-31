@@ -11,6 +11,7 @@ import com.praneeth.Exceptions.ResourceNotFoundException;
 import com.praneeth.Repository.ProjectRepository;
 import com.praneeth.Service.Interfaces.ProjectService;
 import com.praneeth.Service.Interfaces.UserService;
+import com.praneeth.Validators.Validator;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import org.slf4j.Logger;
 
-import static com.praneeth.DTO.ProjectDTO.validate;
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
@@ -31,7 +31,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Project addProject(ProjectDTO dto) {
-        validate(dto);
+        Validator.validateProjectDTO(dto);
         User client = null;
         User builder = null;
 
@@ -77,7 +77,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Project updateProject(Long id, ProjectDTO dto) {
-        ProjectDTO.validate(dto);
+        Validator.validateProjectDTO(dto);
         Project project = getProjectById(id);
 
         project.setTitle(dto.getTitle());

@@ -5,6 +5,7 @@ import com.praneeth.Entity.User;
 import com.praneeth.Exceptions.ResourceNotFoundException;
 import com.praneeth.Repository.UserRepository;
 import com.praneeth.Service.Interfaces.UserService;
+import com.praneeth.Validators.Validator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User createUser(UserDTO dto) {
-        UserDTO.validate(dto);
+        Validator.validateUserDTO(dto);
         User user = new User();
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
