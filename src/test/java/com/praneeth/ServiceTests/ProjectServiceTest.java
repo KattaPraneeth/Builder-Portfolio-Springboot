@@ -2,7 +2,6 @@ package com.praneeth.ServiceTests;
 
 import com.praneeth.Entity.Project;
 import com.praneeth.Repository.ProjectRepository;
-import com.praneeth.Repository.UserRepository;
 import com.praneeth.Service.Implementations.ProjectServiceImpl;
 import com.praneeth.Service.Implementations.UserServiceImpl;
 import org.junit.jupiter.api.Test;
